@@ -1,0 +1,16 @@
+    public static boolean isAnagram(String s1, String s2){
+        // Set both strings to lower case to ensure consistency
+        s1 = s1.toLowerCase();
+        s2 = s2.toLowerCase();
+        
+        // Create two character arrays using both our strings
+        char[] A = s1.toCharArray();
+        char[] B = s2.toCharArray();
+    
+        // Sort each array by character
+        Arrays.sort(A);
+        Arrays.sort(B);
+        
+        // If the arrays are equal return true, else return false
+        return Arrays.equals(A, B);
+    }
