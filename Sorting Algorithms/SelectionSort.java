@@ -20,3 +20,4 @@
     /* Loop invariants
     Outer Loop: The first i elements are sorted
     Inner Loop: min_idx is always the min value of Array[i...j]
+    */
