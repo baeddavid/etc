@@ -1,4 +1,4 @@
-public LinkedList {
+public class LinkedList {
     public Node root;
     public int size;
 
@@ -37,16 +37,17 @@ public LinkedList {
         Node current = root;
         Node prev = null;
 
-        while(current != null && current.iData != key) {
+        while (current != null && current.iData != key) {
             prev = current;
             current = current.next;
 
-            if(current == null)
+            if (current == null)
                 return null;
         }
-        if(current == root)
+        if (current == root) {
             root = null;
             return current;
+        }
         else {
             prev.next = current.next;
             current.next = null;
@@ -63,11 +64,11 @@ public LinkedList {
     public Node findKey(Node head, int key) {
         if(head == null)
             return null;
-            
+
         if(head.iData == key)
             return head;
 
-        return findKey(start.next, key);
+        return findKey(head.next, key);
     }
 
     public void displayList() {
@@ -85,8 +86,8 @@ public LinkedList {
         while(current != null) {
             Node next = current.next;
             current.next = prev;
-            prev = curr;
-            curr = next;
+            prev = current;
+            current = next;
         }
         return prev;
     }
